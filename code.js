@@ -15,7 +15,7 @@ $(document).ready(function() { // this is the same as document.addEventListener(
 
     function setDarkMode() {
         if (localStorage.getItem("theme") === "dark") {
-            $("body").addClass("dark-mode");
+            $("body").addClass("dark-mode"); // $ function allows you to select elements in the DOM
         }
     }
     
@@ -33,7 +33,7 @@ $(document).ready(function() { // this is the same as document.addEventListener(
         // Toggle underline effect on hover
         $("#underline-hover").hover(
             function () { // mouse enters the element
-                $(this).css("text-decoration", "underline"); // JQuery does not support semicolon in the css method
+                $(this).css("text-decoration", "underline"); // JQuery does not support semicolons in the css method
             },
             function () { // mouse leaves the element
                 $(this).css("text-decoration", "none");
@@ -60,4 +60,33 @@ $(document).ready(function() { // this is the same as document.addEventListener(
     }
 
     toggleEffectHover();
+
+    /**
+     * This function animates the elements in the "animation-div" element.
+     * @function
+     * @returns {void}
+     * @description This function animates the elements in the "animation-div" element.
+     */
+
+    function animateElements() {
+       $("#grow-animate").click(
+            function() {
+                $(this).animate(
+                    { fontSize: "3rem"},
+                    800, // duration of the animation in milliseconds
+
+                    function () { // animation reset function
+                        $(this).animate(
+                            { fontSize : "1rem" },
+                            500 // 500 milliseconds
+                        )
+                    }
+                )
+            }
+       );
+
+       
+    }
+
+    animateElements();
 });

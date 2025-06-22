@@ -33,12 +33,21 @@ $(document).ready(function() { // this is the same as document.addEventListener(
         // Toggle underline effect on hover
         $("#underline-hover").hover(
             function () { // mouse enters the element
-            $(this).css("text-decoration", "underline"); // JQuery does not support semicolon in the css method
+                $(this).css("text-decoration", "underline"); // JQuery does not support semicolon in the css method
             },
             function () { // mouse leaves the element
-            $(this).css("text-decoration", "none");
+                $(this).css("text-decoration", "none");
             }
         );
+
+        $("#opacity-hover").hover(
+            function () { // mouse enters the element
+                $(this).css("opacity", "0.5"); // Change opacity to 0.8 on hover
+            },
+            function () { // mouse leaves the element
+                $(this).css("opacity", "1"); // Change opacity back to 1 when not hovered
+            }
+        )
     }
 
     toggleEffectHover();

@@ -1,12 +1,16 @@
 body {
     background-color: white;
     color: black;
-    --border-color: black;
+    --bold-color: black;
     font-family: Arial, sans-serif;
 }
 
 .dark-mode {
     background-color: black;
     color: white;
-    --border-color: white;
+    --bold-color: white;
+}
+
+.toggle-red {
+    color: red;
 }

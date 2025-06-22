@@ -47,6 +47,15 @@ $(document).ready(function() { // this is the same as document.addEventListener(
             function () { // mouse leaves the element
                 $(this).css("opacity", "1"); // Change opacity back to 1 when not hovered
             }
+        );
+
+        $("#color-change-hover").hover(
+            function () { // mouse enters the element
+                $(this).addClass("toggle-red") // Change color to red on hover
+            },
+            function () { // mouse leaves the element
+                $(this).removeClass("toggle-red"); // Remove the color change when not hovered
+            }
         )
     }
 

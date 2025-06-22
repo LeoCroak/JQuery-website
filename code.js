@@ -21,4 +21,25 @@ $(document).ready(function() { // this is the same as document.addEventListener(
     
     // Call the function here to actually run it
     setDarkMode();
+
+    /**
+     * This function toggles all the effects of the elements when they are hovered.
+     * @function
+     * @returns {void}
+     * @description This function toggles the effects of the elements when they are hovered.
+     */
+
+    function toggleEffectHover() {
+        // Toggle underline effect on hover
+        $("#underline-hover").hover(
+            function () { // mouse enters the element
+            $(this).css("text-decoration", "underline"); // JQuery does not support semicolon in the css method
+            },
+            function () { // mouse leaves the element
+            $(this).css("text-decoration", "none");
+            }
+        );
+    }
+
+    toggleEffectHover();
 });
